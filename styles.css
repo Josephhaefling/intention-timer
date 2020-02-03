@@ -1,0 +1,11 @@
+
+* {
+  border: 1px solid red;
+}
+body {
+  background-color: #2B2733
+  font-color: #CBC9CF;
+  font-family: 'montserrat', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
