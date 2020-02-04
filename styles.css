@@ -29,13 +29,18 @@ background-color: #938E8E;
 
 /* right section */
 .right-section {
-  display: flex;
+  flex-direction: column;
+  width: 40%;
 }
 
 header {
-display: flex;
+color: #fff;
+display: block;
+text-align: center;
+background-color: #45414c;
+text-transform: uppercase;
 }
 
 h1 {
-  justify-content: center;
+  color: #CBC9CF;
 }
