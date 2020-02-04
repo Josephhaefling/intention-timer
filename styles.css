@@ -29,27 +29,32 @@ width: 70%;
 
 /* right section */
 .right-section {
+  border-left: solid 2px #45414C;
   flex-direction: column;
-  width: 40%;
-  border-left: solid 1px red;
   height: 100%;
 }
 
 header {
-  background-color: #45414c;
+  background-color: #45414C;
   color: #fff;
   display: block;
+  height: 65px;
   text-align: center;
   text-transform: uppercase;
-  height: 65px;
 }
 
 h1 {
-  padding:12px;
   margin: 0;
+  padding:12px;
 }
 
 h2 {
   color: #CBC9CF;
   padding-left: 3%;
+  width: 100%;
+}
+
+.past-activities-card-box {
+  min-height: 550px;
+  min-width: 100%;
 }
