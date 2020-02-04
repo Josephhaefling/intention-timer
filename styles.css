@@ -3,8 +3,8 @@
   /* border: 1px solid red; */
 }
 body {
-  background-color: #2B2733;
-  font-color: #CBC9CF;
+  background-color: #45414C;
+  color: #CBC9CF;
   font-family: 'montserrat', sans-serif;
   margin: 0px;
   padding: 0px;
@@ -22,9 +22,71 @@ display: flex;
 
 /* left section */
 .left-section {
+<<<<<<< HEAD
 background-color: #938E8E;
+=======
+>>>>>>> 61d73e8a7b682034a899a2291f33c707a1230d3d
 width: 70%;
 }
+
+fieldset {
+  display: flex;
+  margin: 0px, 20px, 20px, 20px;
+}
+
+.select-activity {
+  background-color: #938E8E;
+  border-radius: 5px;
+}
+
+h3.category-header  {
+  margin: 40px;
+}
+
+button.activity-button {
+  background-color: #938E8E;
+  border: 1px white solid;
+  font-size: medium;
+  color: #CBC9CF;
+  height: 70px;
+  width: 140px;
+}
+
+img {
+  height: 30px;
+  weight: 30px;
+}
+
+input[type=text] {
+  outline: none;
+  background-color:#938E8E;
+  border-bottom: 1px solid white;
+}
+
+input[type=number] {
+  outline: none;
+  background-color:#938E8E;
+  border-bottom: 1px solid white;
+}
+
+
+.minutes-header {
+  width: 90px;
+}
+
+.seconds-header {
+  width: 90px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* right section */
