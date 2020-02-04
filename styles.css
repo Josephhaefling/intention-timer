@@ -1,6 +1,6 @@
 
 * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 body {
   background-color: #2B2733;
@@ -22,8 +22,8 @@ display: flex;
 
 /* left section */
 .left-section {
-width: 70%;
 background-color: #938E8E;
+width: 70%;
 }
 
 
@@ -31,16 +31,25 @@ background-color: #938E8E;
 .right-section {
   flex-direction: column;
   width: 40%;
+  border-left: solid 1px red;
+  height: 100%;
 }
 
 header {
-color: #fff;
-display: block;
-text-align: center;
-background-color: #45414c;
-text-transform: uppercase;
+  background-color: #45414c;
+  color: #fff;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  height: 65px;
 }
 
 h1 {
+  padding:12px;
+  margin: 0;
+}
+
+h2 {
   color: #CBC9CF;
+  padding-left: 3%;
 }
