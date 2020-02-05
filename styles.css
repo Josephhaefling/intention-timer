@@ -10,16 +10,17 @@ body {
   padding: 0px;
 }
 
+main {
+  display: flex;
+}
+
 /* left section */
 .left-section {
-<<<<<<< HEAD
-background-color: #938E8E;
-=======
->>>>>>> 61d73e8a7b682034a899a2291f33c707a1230d3d
 width: 70%;
 }
 
 fieldset {
+  background-color: #938E8E
   display: flex;
   padding: 50px;
 }
@@ -57,12 +58,15 @@ img {
 }
 
 input[type=text] {
+  border: none;
   outline: none;
   background-color:#938E8E;
   border-bottom: 1px solid white;
+  width: 100%;
 }
 
 input[type=number] {
+  border: none;
   outline: none;
   background-color:#938E8E;
   border-bottom: 1px solid white;
