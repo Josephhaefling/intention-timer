@@ -10,16 +10,6 @@ body {
   padding: 0px;
 }
 
-/* header section */
-header {
-  display: flex;
-}
-
-/* Main body */
-main {
-display: flex;
-}
-
 /* left section */
 .left-section {
 width: 70%;
@@ -27,7 +17,7 @@ width: 70%;
 
 fieldset {
   display: flex;
-  margin: 0px, 20px, 20px, 20px;
+  padding: 50px;
 }
 
 .select-activity {
@@ -35,8 +25,13 @@ fieldset {
   border-radius: 5px;
 }
 
-h3.category-header  {
+/* h3.category-header  {
   margin: 40px;
+} */
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 button.activity-button {
@@ -51,6 +46,8 @@ button.activity-button {
 img {
   height: 30px;
   weight: 30px;
+  display: block;
+  margin: auto;
 }
 
 input[type=text] {
