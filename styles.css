@@ -70,9 +70,9 @@ input[type=text] {
 input[type=number] {
   border: none;
   outline: none;
-  order: 2;
   background-color:#938E8E;
   border-bottom: 1px solid white;
+  width: 45%;
 }
 
 .seconds-header {
@@ -89,7 +89,9 @@ input[type=number] {
   margin-top: 80px;
 }
 
-
+.seconds-box {
+ 
+}
 
 
 
