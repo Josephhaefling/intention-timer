@@ -1,6 +1,6 @@
 
 * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 body {
   background-color: #45414C;
@@ -16,6 +16,7 @@ main {
 
 /* left section */
 .left-section {
+background-color: #938E8E;
 width: 70%;
 }
 
@@ -92,9 +93,6 @@ input[type=number] {
 .seconds-box {
 
 }
-
-
-
 
 /* right section */
 .right-section {
