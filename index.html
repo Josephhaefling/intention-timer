@@ -13,20 +13,28 @@
     <h1>Intention Timer</h1>
   </header>
   <main>
-    <section class = "left-section">
+    <section class ="left-section">
       <h2>New Activity</h2>
-      <fieldset class = "select-activity">
+      <fieldset class ="select-activity">
         <h3 class="category-header">Select a category:</h3>
-        <button type="button" name="button" class="activity-button"><span>Study</span><img src="assets/study.svg"></button>
-        <button type="button" name="button" class="activity-button">Meditate<img src="assets/meditate.svg"></button>
-        <button type="button" name="button" class="activity-button">Exercise<img src="assets/exercise.svg"></button>
+        <div class="button-container">
+          <button type="button" name="button" class="activity-button" id = "study-button"><img src="assets/study.svg">Study</button>
+          <button type="button" name="button" class="activity-button" id = "meditate-button"><img src="assets/meditate.svg">Meditate</button>
+          <button type="button" name="button" class="activity-button" id = "exercise-button"><img src="assets/exercise.svg">Exercise</button>
+        </div>
         <h3 class="category-header">What would you like to accomplish during this time?</h3>
         <input class="enter-in-name-category"type="text" name="required" minlength= "5" value="" >
-        <h3 class="category-header minutes-header">Minutes</h3>
-        <input type="number" name="Minutes" value="">
-        <h3 class="seconds-header">Seconds</h3>
-        <input type="number" name="Seconds" value="">
-        <button type="button" name="button">Start Activity</button>
+        <div class="minutes-seconds-container">
+          <div class="minutes-box">
+            <h3 class="category-header minutes-header">Minutes</h3>
+            <input type="number" name="Minutes" value="">
+          </div>
+          <div class="seconds-box">
+            <h3 class="seconds-header">Seconds</h3>
+            <input type="number" name="Seconds" value="">
+          </div>
+        </div>
+        <button type="button" name="button" class="start-activity-button">START ACTIVITY</button>
       </fieldset>
     </section>
     <section class= "right-section">
