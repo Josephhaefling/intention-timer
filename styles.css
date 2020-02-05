@@ -1,6 +1,6 @@
 
 * {
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 body {
   background-color: #45414C;
@@ -20,8 +20,9 @@ width: 70%;
 }
 
 fieldset {
-  background-color: #938E8E
+  background-color: #938E8E;
   display: flex;
+  height: 67%;
   padding: 50px;
 }
 
@@ -30,10 +31,6 @@ fieldset {
   border-radius: 5px;
   outline: none;
 }
-
-/* h3.category-header  {
-  margin: 40px;
-} */
 
 .button-container {
   display: flex;
@@ -65,23 +62,32 @@ input[type=text] {
   width: 100%;
 }
 
+.minutes-seconds-container{
+  display: flex;
+  justify-content: space-between;
+}
+
 input[type=number] {
   border: none;
   outline: none;
+  order: 2;
   background-color:#938E8E;
   border-bottom: 1px solid white;
-}
-
-
-.minutes-header {
-  width: 90px;
 }
 
 .seconds-header {
   width: 90px;
 }
 
-
+.start-activity-button {
+  border-radius: 6px;
+  background-color: white;
+  height: 10%;
+  width: 20%;
+  font-size: medium;
+  margin-left: 720px;
+  margin-top: 80px;
+}
 
 
 
