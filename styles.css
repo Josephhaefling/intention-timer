@@ -38,7 +38,7 @@ fieldset {
   justify-content: space-between;
 }
 
-button.activity-button {
+.activity-button {
   background-color: #938E8E;
   border: 1px white solid;
   font-size: medium;
@@ -124,4 +124,9 @@ h2 {
 .past-activities-card-box {
   min-height: 550px;
   min-width: 100%;
+}
+
+.study-selected {
+  color: #b3fd78;
+  border: 1px solid #b3fd78;
 }
