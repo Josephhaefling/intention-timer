@@ -37,6 +37,7 @@ fieldset {
 .select-activity {
   background-color: #938E8E;
   border-radius: 5px;
+  outline: none;
 }
 
 h3.category-header  {
@@ -50,6 +51,7 @@ button.activity-button {
   color: #CBC9CF;
   height: 70px;
   width: 140px;
+  outline: none;
 }
 
 img {
