@@ -6,12 +6,18 @@ var exerciseBtn = document.querySelector('#exercise-button');
 var exerciseImage = document.querySelector('#exercise-image');
 var minInput = document.querySelector('.min-input');
 var secInput = document.querySelector('.sec-input');
+var enterInNameCategory = document.querySelector('.enter-in-name-category');
+var errorMessage = document.querySelector('#error-message')
+var startActivityBtn = document.querySelector('.start-activity-button');
+var buttonSelected = '';
 
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
 exerciseBtn.addEventListener('click', exerciseClicked);
 minInput.addEventListener('input', numOnly);
 secInput.addEventListener('input', secOnly);
+startActivityBtn.addEventListener('click', fieldsCompleted)
+
 
 function studyClicked() {
   studyImage.src = "assets/study-active.svg";
@@ -20,7 +26,7 @@ function studyClicked() {
   meditateBtn.classList.remove('meditate-selected');
   exerciseImage.src = "assets/exercise.svg";
   exerciseBtn.classList.remove('exercise-selected');
-
+  buttonSelected = 'study';
 }
 
 function meditateClicked() {
@@ -30,6 +36,7 @@ function meditateClicked() {
   studyBtn.classList.remove('study-selected');
   exerciseImage.src = "assets/exercise.svg";
   exerciseBtn.classList.remove('exercise-selected');
+  buttonSelected = 'meditate';
 }
 
 function exerciseClicked() {
@@ -39,21 +46,39 @@ function exerciseClicked() {
   meditateBtn.classList.remove ('meditate-selected');
   studyImage.src = "assets/study.svg";
   studyBtn.classList.remove ('study-selected');
+  buttonSelected = 'exercise';
 }
 
-var enterInNameCategory = document.querySelector('.enter-in-name-category');
-var errorMessage = document.querySelector('#error-message')
-var startActivityBtn = document.querySelector('.start-activity-button');
 
-startActivityBtn.addEventListener('click', textRequired)
-
-function textRequired() {
-if (enterInNameCategory.value === '' || minInput.value === '' || secInput.value === '') {
-  document.querySelector('#no-error-message').id = 'error-message';
-} else {
-  document.querySelector('#error-message').id = 'no-error-message';
+function fieldsCompleted() {
+  if (buttonSelected === '' || enterInNameCategory.value === '' || minInput.value === '' ||  secInput.value === ''){
+    document.querySelector('#no-error-message').id = "error-message";
+  } else {
+    return ;
   }
 }
+
+
+
+// function textRequired() {
+// if (enterInNameCategory.value === '') {
+//   return true;
+// } else {
+//   return false;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 
 function numOnly() {
   if (minInput.value === "") {
