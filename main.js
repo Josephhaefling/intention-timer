@@ -4,10 +4,14 @@ var meditateBtn = document.querySelector('#meditate-button');
 var meditateImage = document.querySelector('#meditate-image');
 var exerciseBtn = document.querySelector('#exercise-button');
 var exerciseImage = document.querySelector('#exercise-image');
+var minInput = document.querySelector('.min-input');
+var secInput = document.querySelector('.sec-input');
 
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
 exerciseBtn.addEventListener('click', exerciseClicked);
+minInput.addEventListener('input', numOnly);
+secInput.addEventListener('input', secOnly);
 
 function studyClicked() {
   studyImage.src = "assets/study-active.svg";
@@ -52,3 +56,16 @@ if (enterInNameCategory.value === '') {
   return;
 }
 }
+
+function numOnly() {
+  if (minInput.value === "") {
+    minInput.value = "";
+  };
+};
+
+function secOnly() {
+  if (secInput.value === "") {
+    secInput.value = "";
+  };
+};
+
