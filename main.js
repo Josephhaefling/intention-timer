@@ -30,7 +30,9 @@ function meditateClicked() {
 
 function exerciseClicked() {
   exerciseImage.src = "assets/exercise-active.svg";
-  studyBtn.classList.add('exercise-selected');
+  exerciseBtn.classList.add('exercise-selected');
   meditateImage.src = "assets/meditate.svg";
-  studyImage.src = "assets/study.svg";
+  meditateBtn.classList.remove ('meditate-selected');
+  studyImage.src = "assets/study.svg"; 
+  studyBtn.classList.remove ('study-selected');
 }
