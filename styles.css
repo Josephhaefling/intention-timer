@@ -142,3 +142,7 @@ h2 {
   color: #C278FD;
   border: 1px solid #C278FD;
 }
+
+#no-error-message {
+  display: none;
+}

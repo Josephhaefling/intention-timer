@@ -41,6 +41,22 @@ function exerciseClicked() {
   studyBtn.classList.remove ('study-selected');
 }
 
+var enterInNameCategory = document.querySelector('.enter-in-name-category');
+var errorMessage = document.querySelector('#error-message')
+var startActivityBtn = document.querySelector('.start-activity-button');
+
+startActivityBtn.addEventListener('click', textRequired)
+
+
+function textRequired() {
+  // event.peventDefault();
+if (enterInNameCategory.value === '') {
+  document.querySelector('#no-error-message').id = 'error-message';
+} else {
+  return;
+}
+}
+
 function numOnly() {
   if (minInput.value === "") {
     minInput.value = "";
@@ -52,3 +68,4 @@ function secOnly() {
     secInput.value = "";
   };
 };
+
