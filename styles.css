@@ -130,3 +130,8 @@ h2 {
   color: #b3fd78;
   border: 1px solid #b3fd78;
 }
+
+.exercise-selected {
+  color: #FD8078;
+  border: 1px solid #FD8078;
+}

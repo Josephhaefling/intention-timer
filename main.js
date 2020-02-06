@@ -13,7 +13,9 @@ function studyClicked() {
   studyImage.src = "assets/study-active.svg";
   studyBtn.classList.add('study-selected');
   meditateImage.src = "assets/meditate.svg";
-  exerciseImage.src = "assets/exercise.svg";
+  meditateBtn.classList.remove ('study-selected');
+  exerciseImage.src = "assets/study.svg";
+  exerciseBtn.classList.remove('study-selected');
 }
 
 function meditateClicked() {
@@ -25,7 +27,9 @@ function meditateClicked() {
 
 function exerciseClicked() {
   exerciseImage.src = "assets/exercise-active.svg";
-  studyBtn.classList.add('exercise-selected');
+  exerciseBtn.classList.add('exercise-selected');
   meditateImage.src = "assets/meditate.svg";
-  studyImage.src = "assets/exercise.svg";
+  meditateBtn.classList.remove ('meditate-selected');
+  studyImage.src = "assets/study.svg";
+  studyBtn.classList.remove ('study-selected');
 }
