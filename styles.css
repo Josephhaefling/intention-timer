@@ -90,6 +90,7 @@ input[type=number] {
   font-size: medium;
   margin-left: 720px;
   margin-top: 80px;
+  outline: none;
 }
 
 .seconds-box {
