@@ -47,14 +47,12 @@ var startActivityBtn = document.querySelector('.start-activity-button');
 
 startActivityBtn.addEventListener('click', textRequired)
 
-
 function textRequired() {
-  // event.peventDefault();
-if (enterInNameCategory.value === '') {
+if (enterInNameCategory.value === '' || minInput.value === '' || secInput.value === '') {
   document.querySelector('#no-error-message').id = 'error-message';
 } else {
-  return;
-}
+  document.querySelector('#error-message').id = 'no-error-message';
+  }
 }
 
 function numOnly() {
@@ -68,4 +66,3 @@ function secOnly() {
     secInput.value = "";
   };
 };
-
