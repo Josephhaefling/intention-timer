@@ -33,6 +33,22 @@ function exerciseClicked() {
   exerciseBtn.classList.add('exercise-selected');
   meditateImage.src = "assets/meditate.svg";
   meditateBtn.classList.remove ('meditate-selected');
-  studyImage.src = "assets/study.svg"; 
+  studyImage.src = "assets/study.svg";
   studyBtn.classList.remove ('study-selected');
+}
+
+var enterInNameCategory = document.querySelector('.enter-in-name-category');
+var errorMessage = document.querySelector('#error-message')
+var startActivityBtn = document.querySelector('.start-activity-button');
+
+startActivityBtn.addEventListener('click', textRequired)
+
+
+function textRequired() {
+  // event.peventDefault();
+if (enterInNameCategory.value === '') {
+  document.querySelector('#no-error-message').id = 'error-message';
+} else {
+  return;
+}
 }
