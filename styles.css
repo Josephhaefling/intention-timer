@@ -130,3 +130,8 @@ h2 {
   color: #b3fd78;
   border: 1px solid #b3fd78;
 }
+
+.meditate-selected {
+  color: #C278FD;
+  border: 1px solid #C278FD;
+}
