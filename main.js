@@ -10,7 +10,9 @@ var enterInNameCategory = document.querySelector('.enter-in-name-category');
 var errorMessage = document.querySelector('#error-message');
 var startActivityBtn = document.querySelector('.start-activity-button');
 var buttonSelected = '';
-var hideLeftSection = documemt.querySelector('.left-section');
+var hideLeftSection = document.querySelector('.left-section');
+var timerSection = document.querySelector('#timer-page')
+
 
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
@@ -55,20 +57,11 @@ function fieldsCompleted() {
   if (buttonSelected === '' || enterInNameCategory.value === '' || minInput.value === '' ||  secInput.value === ''){
     document.querySelector('#no-error-message').id = "error-message";
   } else {
-    hideLeftSection.ClassList.add('main-page-hide');
-    .classList.remove('main-page-hide');
+    hideLeftSection.classList.add('main-page-hide');
+    timerSection.classList.remove('main-page-hide');
   } 
 }
 
-
-
-// function textRequired() {
-// if (enterInNameCategory.value === '') {
-//   return true;
-// } else {
-//   return false;
-//   }
-// }
 
 
 
