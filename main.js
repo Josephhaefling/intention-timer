@@ -11,8 +11,8 @@ var errorMessage = document.querySelector('#error-message');
 var startActivityBtn = document.querySelector('.start-activity-button');
 var buttonSelected = '';
 var hideLeftSection = document.querySelector('.left-section');
-var timerSection = document.querySelector('#timer-page')
-
+var timerSection = document.querySelector('#timer-page');
+var timerStatus = document.querySelector('#timer-status');
 
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
@@ -20,6 +20,7 @@ exerciseBtn.addEventListener('click', exerciseClicked);
 minInput.addEventListener('input', numOnly);
 secInput.addEventListener('input', secOnly);
 startActivityBtn.addEventListener('click', fieldsCompleted)
+startActivityBtn.addEventListener('mouseup', activityTimerColor);
 
 
 function studyClicked() {
@@ -52,28 +53,24 @@ function exerciseClicked() {
   buttonSelected = 'exercise';
 }
 
-
 function fieldsCompleted() {
   if (buttonSelected === '' || enterInNameCategory.value === '' || minInput.value === '' ||  secInput.value === ''){
     document.querySelector('#no-error-message').id = "error-message";
   } else {
     hideLeftSection.classList.add('main-page-hide');
     timerSection.classList.remove('main-page-hide');
-  } 
+  }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+function activityTimerColor() {
+  if (buttonSelected === 'exercise') {
+    timerStatus.style.border = "2px solid #FD8078";
+  } else if (buttonSelected === 'study') {
+    timerStatus.style.border = "2px solid #B3FD78";
+  } else {
+    timerStatus.style.border = "2px solid #C278FD";
+  }
+}
 
 function numOnly() {
   if (minInput.value === "") {
