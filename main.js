@@ -54,7 +54,7 @@ function fieldsCompleted() {
   if (buttonSelected === '' || enterInNameCategory.value === '' || minInput.value === '' ||  secInput.value === ''){
     document.querySelector('#no-error-message').id = "error-message";
   } else {
-    return ;
+    return;
   }
 }
 
