@@ -153,10 +153,10 @@ h2 {
   display: none;
 }
 
-#timer-page {
-background-color: #938E8E;
-width: 70%;
-display: none;
+/* Timer Page */
+
+.timer-section {
+  width: 70%;
 }
 
 #timer-face {
