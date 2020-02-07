@@ -7,9 +7,10 @@ var exerciseImage = document.querySelector('#exercise-image');
 var minInput = document.querySelector('.min-input');
 var secInput = document.querySelector('.sec-input');
 var enterInNameCategory = document.querySelector('.enter-in-name-category');
-var errorMessage = document.querySelector('#error-message')
+var errorMessage = document.querySelector('#error-message');
 var startActivityBtn = document.querySelector('.start-activity-button');
 var buttonSelected = '';
+var hideLeftSection = documemt.querySelector('.left-section');
 
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
@@ -54,8 +55,9 @@ function fieldsCompleted() {
   if (buttonSelected === '' || enterInNameCategory.value === '' || minInput.value === '' ||  secInput.value === ''){
     document.querySelector('#no-error-message').id = "error-message";
   } else {
-    document.querySelector('#error-message').id = "no-error-message";
-  }
+    hideLeftSection.ClassList.add('main-page-hide');
+    .classList.remove('main-page-hide');
+  } 
 }
 
 

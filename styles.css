@@ -15,6 +15,10 @@ main {
   background-color: #2B2733;
 }
 
+.main-page-hide {
+  display: none;
+}
+
 .left-section {
 width: 70%;
 background-color: #2B2733;
@@ -93,10 +97,6 @@ input[type=number] {
   margin-left: 720px;
   margin-top: 80px;
   outline: none;
-}
-
-.seconds-box {
-
 }
 
 /* right section */
