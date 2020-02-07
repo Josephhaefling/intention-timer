@@ -3,7 +3,7 @@
   /* border: 1px solid red; */
 }
 body {
-  background-color: #45414C;
+  background-color: #938E8E;
   color: #CBC9CF;
   font-family: 'montserrat', sans-serif;
   margin: 0px;
@@ -12,24 +12,24 @@ body {
 
 main {
   display: flex;
+  background-color: #2B2733;
 }
-/* hide main page */
-/* left section */
+
 .left-section {
-background-color: #938E8E;
 width: 70%;
-display: none;
+background-color: #2B2733;
 }
 
 fieldset {
-  background-color: #938E8E;
+  background-color: #45414C;
+  border: none;
   display: flex;
-  height: 67%;
-  padding: 50px;
+  height: 80%;
+  width: 90%;
 }
 
 .select-activity {
-  background-color: #938E8E;
+  background-color: #45414C;
   border-radius: 5px;
   outline: none;
 }
@@ -40,7 +40,7 @@ fieldset {
 }
 
 .activity-button {
-  background-color: #938E8E;
+  background-color: #45414C;
   border: 1px white solid;
   font-size: medium;
   color: #CBC9CF;
@@ -59,7 +59,7 @@ img {
 input[type=text] {
   border: none;
   outline: none;
-  background-color:#938E8E;
+  background-color:#45414C;
   border-bottom: 1px solid white;
   width: 100%;
 }
@@ -70,9 +70,10 @@ input[type=text] {
 }
 
 input[type=number] {
+  -webkit-appearance: none;
   border: none;
   outline: none;
-  background-color:#938E8E;
+  background-color:#45414C;
   border-bottom: 1px solid white;
   font-size: 20px;
   color: white;
@@ -102,7 +103,9 @@ input[type=number] {
 .right-section {
   border-left: solid 2px #45414C;
   flex-direction: column;
+  background-color: #2B2733;
   height: 100%;
+  width: 30%;
 }
 
 header {
@@ -121,6 +124,7 @@ h1 {
 
 h2 {
   color: #CBC9CF;
+  background-color: #2B2733;
   padding-left: 3%;
   width: 100%;
 }
@@ -151,7 +155,7 @@ h2 {
 #timer-page {
 background-color: #938E8E;
 width: 70%;
-/* display: none; */
+display: none;
 }
 
 #timer-face {
