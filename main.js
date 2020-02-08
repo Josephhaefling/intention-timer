@@ -114,6 +114,6 @@ function changeThatShit() {
   var sec = parseInt(secInput.value)
   var timer = min * 60 + sec;
   console.log(timer);
-     display = min, sec;
+     display = countdownTimer;
       this.startTimer(timer, display);
  };
