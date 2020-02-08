@@ -59,8 +59,10 @@ function fieldsCompleted() {
   } else {
     hideLeftSection.classList.add('main-page-hide');
     timerSection.classList.remove('main-page-hide');
+    changeThatShit();
   }
 }
+
 
 function activityTimerColor() {
   if (buttonSelected === 'exercise') {
@@ -83,3 +85,35 @@ function secOnly() {
     secInput.value = "";
   };
 };
+
+
+var startTimerButton = document.querySelector('#timer-text');
+var countdownTimer = document.querySelector('#time-remaining');
+
+startTimerButton.addEventListener('click', startTimer);
+
+function startTimer(duration, display) {
+  var timer = duration, minutes, seconds;
+    setInterval(function() {
+      minutes = parseInt(timer / 60, 10);
+      seconds = parseInt(timer % 60, 10);
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      display.textContent = minutes + ":" + seconds;
+
+      if (--timer <0) {
+        timer = duration;
+      }
+    }, 1000);
+}
+ 
+function changeThatShit() {
+  var min = parseInt(minInput.value)
+  var sec = parseInt(secInput.value)
+  var timer = min * 60 + sec;
+  console.log(timer);
+     display = min, sec;
+      this.startTimer(timer, display);
+ };
