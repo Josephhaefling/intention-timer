@@ -13,6 +13,8 @@ var buttonSelected = '';
 var hideLeftSection = document.querySelector('.left-section');
 var timerSection = document.querySelector('#timer-page');
 var timerStatus = document.querySelector('#timer-status');
+var timeLeft;
+
 
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
@@ -59,7 +61,7 @@ function fieldsCompleted() {
   } else {
     hideLeftSection.classList.add('main-page-hide');
     timerSection.classList.remove('main-page-hide');
-    changeThatShit();
+    setTimer();
   }
 }
 
@@ -90,31 +92,66 @@ function secOnly() {
 var startTimerButton = document.querySelector('#timer-text');
 var countdownTimer = document.querySelector('#time-remaining');
 
+
 startTimerButton.addEventListener('click', startTimer);
 
-function setTimer(duration, display) {
-  var timer = duration, minutes, seconds;
-  minutes = parseInt(timer / 60, 10);
-      seconds = parseInt(timer % 60, 10);
+// function setTimer(duration, display) {
+//   var timer = duration, minutes, seconds;
+//   minutes = parseInt(timer / 60, 10);
+//       seconds = parseInt(timer % 60, 10);
+//       minutes = minutes < 10 ? "0" + minutes : minutes;
+//       seconds = seconds < 10 ? "0" + seconds : seconds;
+//       countdownTimer.textContent = minutes + ":" + seconds;
+//     function startTimer(duration, display) {
+//           console.log(timer);
+//           console.log(duration);
+//           setInterval(function() {
+//             if (--timer < 0) {
+//               timer = duration;
+//             }
+//           }, 1000);
+//       }
+//     }
 
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
+// function startTimer() {
+//     var duration = duration;
+//     var timer = timer;
+//     console.log(timer);
+//     console.log(duration);
+//     setInterval(function() {
+//       if (--timer <0) {
+//         timer = duration;
+//       }
+//     }, 1000);
+// }
 
-      display.textContent = minutes + ":" + seconds;
-}
-function startTimer() {
-    setInterval(function() {
-      if (--timer <0) {
-        timer = duration;
-      }
-    }, 1000);
-}
- 
-function changeThatShit() {
+function setTimer() {
   var min = parseInt(minInput.value)
   var sec = parseInt(secInput.value)
   var timer = min * 60 + sec;
-  console.log(timer);
      display = countdownTimer;
-      this.startTimer(timer, display);
+     // var timer = timer, minutes, seconds;
+     minutes = parseInt(timer / 60, 10);
+         seconds = parseInt(timer % 60, 10);
+         minutes = minutes < 10 ? "0" + minutes : minutes;
+         seconds = seconds < 10 ? "0" + seconds : seconds;
+         countdownTimer.textContent = minutes + ":" + seconds;
+         timeLeft = ;
  };
+
+function startTimer(timeLeft) {
+  console.log(timeLeft);
+   var timer = parseInt(timeLeft), minutes, seconds;
+   minutes = parseInt(timer / 60, 10);
+       seconds = parseInt(timer % 60, 10);
+       minutes = minutes < 10 ? "0" + minutes : minutes;
+       seconds = seconds < 10 ? "0" + seconds : seconds;
+       countdownTimer.textContent = minutes + ":" + seconds;
+           console.log(display);
+           console.log(timeLeft);
+           setInterval(function() {
+             if (--timer < 0) {
+               countdownTimer.textContent = timer;
+             }
+           }, 1000);
+       }
