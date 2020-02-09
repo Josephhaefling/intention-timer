@@ -1,4 +1,4 @@
-var studyBtn = document.querySelector('#study-button');
+cdvar studyBtn = document.querySelector('#study-button');
 var studyImage = document.querySelector('#study-image');
 var meditateBtn = document.querySelector('#meditate-button');
 var meditateImage = document.querySelector('#meditate-image');
@@ -17,7 +17,6 @@ var startTimerButton = document.querySelector('#timer-text');
 var countdownTimer = document.querySelector('#time-remaining');
 var timeLeft = 0;
 var display = countdownTimer;
-
 
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
