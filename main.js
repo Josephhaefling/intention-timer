@@ -13,7 +13,10 @@ var buttonSelected = '';
 var hideLeftSection = document.querySelector('.left-section');
 var timerSection = document.querySelector('#timer-page');
 var timerStatus = document.querySelector('#timer-status');
-var timeLeft;
+var startTimerButton = document.querySelector('#timer-text');
+var countdownTimer = document.querySelector('#time-remaining');
+var timeLeft = 0;
+var display = countdownTimer;
 
 
 studyBtn.addEventListener('click', studyClicked);
@@ -23,6 +26,8 @@ minInput.addEventListener('input', numOnly);
 secInput.addEventListener('input', secOnly);
 startActivityBtn.addEventListener('click', fieldsCompleted)
 startActivityBtn.addEventListener('mouseup', activityTimerColor);
+timerStatus.addEventListener('click', startTimer);
+
 
 
 function studyClicked() {
@@ -88,70 +93,35 @@ function secOnly() {
   };
 };
 
-
-var startTimerButton = document.querySelector('#timer-text');
-var countdownTimer = document.querySelector('#time-remaining');
-
-
-startTimerButton.addEventListener('click', startTimer);
-
-// function setTimer(duration, display) {
-//   var timer = duration, minutes, seconds;
-//   minutes = parseInt(timer / 60, 10);
-//       seconds = parseInt(timer % 60, 10);
-//       minutes = minutes < 10 ? "0" + minutes : minutes;
-//       seconds = seconds < 10 ? "0" + seconds : seconds;
-//       countdownTimer.textContent = minutes + ":" + seconds;
-//     function startTimer(duration, display) {
-//           console.log(timer);
-//           console.log(duration);
-//           setInterval(function() {
-//             if (--timer < 0) {
-//               timer = duration;
-//             }
-//           }, 1000);
-//       }
-//     }
-
-// function startTimer() {
-//     var duration = duration;
-//     var timer = timer;
-//     console.log(timer);
-//     console.log(duration);
-//     setInterval(function() {
-//       if (--timer <0) {
-//         timer = duration;
-//       }
-//     }, 1000);
-// }
-
 function setTimer() {
   var min = parseInt(minInput.value)
   var sec = parseInt(secInput.value)
   var timer = min * 60 + sec;
-     display = countdownTimer;
-     // var timer = timer, minutes, seconds;
+     var timer = timer, minutes, seconds;
      minutes = parseInt(timer / 60, 10);
          seconds = parseInt(timer % 60, 10);
          minutes = minutes < 10 ? "0" + minutes : minutes;
          seconds = seconds < 10 ? "0" + seconds : seconds;
-         countdownTimer.textContent = minutes + ":" + seconds;
-         timeLeft = ;
+         countdownTimer.innerText = minutes + ":" + seconds;
+         return timeLeft = timer;
  };
 
-function startTimer(timeLeft) {
-  console.log(timeLeft);
-   var timer = parseInt(timeLeft), minutes, seconds;
-   minutes = parseInt(timer / 60, 10);
+function addInfoToStartTimer() {
+  startTimer(timeLeft, display);
+ }
+
+function startTimer() {
+  setInterval(function() {
+    var timer = parseInt(timeLeft), minutes, seconds;
+    if (--timer >= 0) {
+       minutes = parseInt(timer / 60, 10);
        seconds = parseInt(timer % 60, 10);
        minutes = minutes < 10 ? "0" + minutes : minutes;
        seconds = seconds < 10 ? "0" + seconds : seconds;
-       countdownTimer.textContent = minutes + ":" + seconds;
-           console.log(display);
-           console.log(timeLeft);
-           setInterval(function() {
-             if (--timer < 0) {
-               countdownTimer.textContent = timer;
-             }
+       countdownTimer.innerText = minutes + ":" + seconds;
+       timeLeft = parseInt(timeLeft) - 1;
+     } else {
+       startTimerButton.innerHTML = 'You crushed it!'
+     }
            }, 1000);
        }
