@@ -1,4 +1,4 @@
-cdvar studyBtn = document.querySelector('#study-button');
+var studyBtn = document.querySelector('#study-button');
 var studyImage = document.querySelector('#study-image');
 var meditateBtn = document.querySelector('#meditate-button');
 var meditateImage = document.querySelector('#meditate-image');
