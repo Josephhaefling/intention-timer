@@ -1,4 +1,4 @@
-var studyBtn = document.querySelector('#study-button');
+cdvar studyBtn = document.querySelector('#study-button');
 var studyImage = document.querySelector('#study-image');
 var meditateBtn = document.querySelector('#meditate-button');
 var meditateImage = document.querySelector('#meditate-image');
@@ -13,6 +13,7 @@ var buttonSelected = '';
 var hideLeftSection = document.querySelector('.left-section');
 var timerSection = document.querySelector('#timer-page');
 var timerStatus = document.querySelector('#timer-status');
+var inputActivityTimer = document.querySelector('.input-activity-timer-page');
 
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
@@ -59,6 +60,8 @@ function fieldsCompleted() {
   } else {
     hideLeftSection.classList.add('main-page-hide');
     timerSection.classList.remove('main-page-hide');
+    inputActivityTimer.innerText = enterInNameCategory.value;
+    
   }
 }
 
@@ -83,3 +86,4 @@ function secOnly() {
     secInput.value = "";
   };
 };
+ 
