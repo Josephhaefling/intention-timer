@@ -13,7 +13,10 @@ var buttonSelected = '';
 var hideLeftSection = document.querySelector('.left-section');
 var timerSection = document.querySelector('#timer-page');
 var timerStatus = document.querySelector('#timer-status');
-var inputActivityTimer = document.querySelector('.input-activity-timer-page');
+var startTimerButton = document.querySelector('#timer-text');
+var countdownTimer = document.querySelector('#time-remaining');
+var timeLeft = 0;
+var display = countdownTimer;
 
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
@@ -22,6 +25,8 @@ minInput.addEventListener('input', numOnly);
 secInput.addEventListener('input', secOnly);
 startActivityBtn.addEventListener('click', fieldsCompleted)
 startActivityBtn.addEventListener('mouseup', activityTimerColor);
+timerStatus.addEventListener('click', startTimer);
+
 
 
 function studyClicked() {
@@ -60,10 +65,10 @@ function fieldsCompleted() {
   } else {
     hideLeftSection.classList.add('main-page-hide');
     timerSection.classList.remove('main-page-hide');
-    inputActivityTimer.innerText = enterInNameCategory.value;
-    
+    setTimer();
   }
 }
+
 
 function activityTimerColor() {
   if (buttonSelected === 'exercise') {
@@ -86,4 +91,36 @@ function secOnly() {
     secInput.value = "";
   };
 };
- 
+
+function setTimer() {
+  var min = parseInt(minInput.value)
+  var sec = parseInt(secInput.value)
+  var timer = min * 60 + sec;
+     var timer = timer, minutes, seconds;
+     minutes = parseInt(timer / 60, 10);
+         seconds = parseInt(timer % 60, 10);
+         minutes = minutes < 10 ? "0" + minutes : minutes;
+         seconds = seconds < 10 ? "0" + seconds : seconds;
+         countdownTimer.innerText = minutes + ":" + seconds;
+         return timeLeft = timer;
+ };
+
+function addInfoToStartTimer() {
+  startTimer(timeLeft, display);
+ }
+
+function startTimer() {
+  setInterval(function() {
+    var timer = parseInt(timeLeft), minutes, seconds;
+    if (--timer >= 0) {
+       minutes = parseInt(timer / 60, 10);
+       seconds = parseInt(timer % 60, 10);
+       minutes = minutes < 10 ? "0" + minutes : minutes;
+       seconds = seconds < 10 ? "0" + seconds : seconds;
+       countdownTimer.innerText = minutes + ":" + seconds;
+       timeLeft = parseInt(timeLeft) - 1;
+     } else {
+       startTimerButton.innerHTML = 'You crushed it!'
+     }
+           }, 1000);
+       }
