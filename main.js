@@ -17,6 +17,8 @@ var startTimerButton = document.querySelector('#timer-text');
 var countdownTimer = document.querySelector('#time-remaining');
 var timeLeft = 0;
 var display = countdownTimer;
+var activityInputTimerPage = document.querySelector('.input-activity-timer-page');
+
 
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
@@ -65,6 +67,7 @@ function fieldsCompleted() {
   } else {
     hideLeftSection.classList.add('main-page-hide');
     timerSection.classList.remove('main-page-hide');
+    activityInputTimerPage.innerHTML = enterInNameCategory.value;
     setTimer();
   }
 }
