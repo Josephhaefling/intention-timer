@@ -19,6 +19,17 @@ main {
   display: none;
 }
 
+#category-button-error {
+  display: none;
+}
+#sec-input-error {
+  display: none;
+}
+
+#min-input-error {
+  display: none;
+}
+
 .left-section {
 width: 70%;
 background-color: #2B2733;
