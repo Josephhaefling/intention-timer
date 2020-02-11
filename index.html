@@ -20,6 +20,7 @@
           <button type="button" name="button" class="activity-button" id = "study-button"><img src="assets/study.svg" id = "study-image">Study</button>
           <button type="button" name="button" class="activity-button" id = "meditate-button"><img src="assets/meditate.svg" id = "meditate-image">Meditate</button>
           <button type="button" name="button" class="activity-button" id = "exercise-button"><img src="assets/exercise.svg" id = "exercise-image">Exercise</button>
+          <span id="category-button-error" class="no-error-category-selected"><img src="assets/warning.svg"/>Select a category</span>
         </div>
         <h3 class="category-header">Select a category:</h3>
         <h3 class="category-header">What would you like to accomplish during this time?</h3>
@@ -28,8 +29,10 @@
         <div class="minutes-seconds-container">
           <h3 class="category-header minutes-header">Minutes</h3>
           <input class="min-input" type="number" name="Minutes" value="">
+          <span id="min-input-error">Choose yo' minutes! </span>
           <h3 class="seconds-header">Seconds</h3>
           <input type="number" class="sec-input" name="Seconds" value="">
+          <span id="sec-input-error">Choose yo' seconds! </span>
           </div>
           <button type="button" name="button" class="start-activity-button">START ACTIVITY</button>
       </fieldset>
