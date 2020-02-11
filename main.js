@@ -8,6 +8,7 @@ var minInput = document.querySelector('.min-input');
 var secInput = document.querySelector('.sec-input');
 var enterInNameCategory = document.querySelector('.enter-in-name-category');
 var errorMessage = document.querySelector('#error-message');
+var errorMessageCategoryButton = document.querySelector('#category-button-error');
 var startActivityBtn = document.querySelector('.start-activity-button');
 var buttonSelected = '';
 var hideLeftSection = document.querySelector('.left-section');
@@ -61,9 +62,16 @@ function exerciseClicked() {
   buttonSelected = 'exercise';
 }
 
+
 function fieldsCompleted() {
-  if (buttonSelected === '' || enterInNameCategory.value === '' || minInput.value === '' ||  secInput.value === ''){
+  if (buttonSelected === '') {
+    document.querySelector('#category-button-error').id="error-message";
+  } else if (enterInNameCategory.value === '' ) {
     document.querySelector('#no-error-message').id = "error-message";
+  } else if (minInput.value === '' ) {
+    document.querySelector('#min-input-error').id = "error-message";
+  } else if (secInput.value === '') {
+    document.querySelector('#sec-input-error').id = "error-message";
   } else {
     hideLeftSection.classList.add('main-page-hide');
     timerSection.classList.remove('main-page-hide');
