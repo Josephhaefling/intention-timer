@@ -6,11 +6,11 @@ var exerciseBtn = document.querySelector('#exercise-button');
 var exerciseImage = document.querySelector('#exercise-image');
 var minInput = document.querySelector('.min-input');
 var secInput = document.querySelector('.sec-input');
-var enterInNameCategory = document.querySelector('.enter-in-name-category');
+var nameCategory = document.querySelector('.enter-in-name-category');
 var errorMessage = document.querySelector('#error-message');
 var startActivityBtn = document.querySelector('.start-activity-button');
 var buttonSelected = '';
-var hideLeftSection = document.querySelector('.left-section');
+var leftSection = document.querySelector('.left-section');
 var timerSection = document.querySelector('#timer-page');
 var timerStatus = document.querySelector('#timer-status');
 var startTimerButton = document.querySelector('#timer-text');
@@ -23,10 +23,10 @@ var activityInputTimerPage = document.querySelector('.input-activity-timer-page'
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
 exerciseBtn.addEventListener('click', exerciseClicked);
-minInput.addEventListener('input', numOnly);
-secInput.addEventListener('input', secOnly);
+minInput.addEventListener('input', allowNumOnly);
+secInput.addEventListener('input', allowSecOnly);
 startActivityBtn.addEventListener('click', fieldsCompleted)
-startActivityBtn.addEventListener('mouseup', activityTimerColor);
+startActivityBtn.addEventListener('mouseup', updateTimerColor);
 timerStatus.addEventListener('click', startTimer);
 
 
@@ -62,18 +62,22 @@ function exerciseClicked() {
 }
 
 function fieldsCompleted() {
-  if (buttonSelected === '' || enterInNameCategory.value === '' || minInput.value === '' ||  secInput.value === ''){
+  if (buttonSelected === '') {
+    document.querySelector('#category-button-error').id="error-message";
+  } else if (nameCategory.value === '' ) {
     document.querySelector('#no-error-message').id = "error-message";
+  } else if (minInput.value === '' ) {
+    document.querySelector('#min-input-error').id = "error-message";
+  } else if (secInput.value === '') {
+    document.querySelector('#sec-input-error').id = "error-message";
   } else {
     hideLeftSection.classList.add('main-page-hide');
     timerSection.classList.remove('main-page-hide');
-    activityInputTimerPage.innerHTML = enterInNameCategory.value;
-    setTimer();
   }
 }
 
 
-function activityTimerColor() {
+function updateTimerColor() {
   if (buttonSelected === 'exercise') {
     timerStatus.style.border = "2px solid #FD8078";
   } else if (buttonSelected === 'study') {
@@ -83,13 +87,13 @@ function activityTimerColor() {
   }
 }
 
-function numOnly() {
+function allowNumOnly() {
   if (minInput.value === "") {
     minInput.value = "";
   };
 };
 
-function secOnly() {
+function allowSecOnly() {
   if (secInput.value === "") {
     secInput.value = "";
   };
@@ -123,3 +127,5 @@ function startTimer() {
     }
   }, 1000);
 }
+
+
