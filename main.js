@@ -107,31 +107,27 @@ function setTimer() {
   var min = parseInt(minInput.value)
   var sec = parseInt(secInput.value)
   var timer = min * 60 + sec;
-     var timer = timer, minutes, seconds;
-     minutes = parseInt(timer / 60, 10);
-         seconds = parseInt(timer % 60, 10);
-         minutes = minutes < 10 ? "0" + minutes : minutes;
-         seconds = seconds < 10 ? "0" + seconds : seconds;
-         countdownTimer.innerText = minutes + ":" + seconds;
-         return timeLeft = timer;
+  // var timer = timer, minutes, seconds;
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+    minutes = minutes < 10 ? "0" + minutes : minutes; 
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    countdownTimer.innerText = minutes + ":" + seconds;
+    return timeLeft = timer;
  };
-
-function addInfoToStartTimer() {
-  startTimer(timeLeft, display);
- }
 
 function startTimer() {
   setInterval(function() {
     var timer = parseInt(timeLeft), minutes, seconds;
     if (--timer >= 0) {
-       minutes = parseInt(timer / 60, 10);
-       seconds = parseInt(timer % 60, 10);
-       minutes = minutes < 10 ? "0" + minutes : minutes;
-       seconds = seconds < 10 ? "0" + seconds : seconds;
-       countdownTimer.innerText = minutes + ":" + seconds;
-       timeLeft = parseInt(timeLeft) - 1;
-     } else {
-       startTimerButton.innerHTML = 'You crushed it!'
-     }
-           }, 1000);
-       }
+      minutes = parseInt(timer / 60, 10);
+      seconds = parseInt(timer % 60, 10);
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      countdownTimer.innerText = minutes + ":" + seconds;
+      timeLeft = parseInt(timeLeft) - 1;
+    } else {
+      startTimerButton.innerHTML = 'You crushed it!'
+    }
+  }, 1000);
+}
