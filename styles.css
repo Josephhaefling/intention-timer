@@ -12,10 +12,6 @@ main {
   display: flex;
 }
 
-.main-page-hide {
-  display: none;
-}
-
 #category-button-error {
   display: none;
 }
@@ -216,4 +212,8 @@ h2 {
 
 #timer-text{
   padding-top: 10px;
+}
+
+.main-page-hide {
+  display: none;
 }
