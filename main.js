@@ -23,7 +23,7 @@ var activityInputTimerPage = document.querySelector('.input-activity-timer-page'
 studyBtn.addEventListener('click', studyClicked);
 meditateBtn.addEventListener('click', meditateClicked);
 exerciseBtn.addEventListener('click', exerciseClicked);
-minInput.addEventListener('input', allowNumOnly);
+minInput.addEventListener('input', allowMinOnly);
 secInput.addEventListener('input', allowSecOnly);
 startActivityBtn.addEventListener('click', fieldsCompleted)
 startActivityBtn.addEventListener('mouseup', updateTimerColor);
@@ -71,8 +71,10 @@ function fieldsCompleted() {
   } else if (secInput.value === '') {
     document.querySelector('#sec-input-error').id = "error-message";
   } else {
-    hideLeftSection.classList.add('main-page-hide');
+    leftSection.classList.add('main-page-hide');
     timerSection.classList.remove('main-page-hide');
+    activityInputTimerPage.innerHTML = nameCategory.value;
+    setTimer();
   }
 }
 
@@ -87,7 +89,7 @@ function updateTimerColor() {
   }
 }
 
-function allowNumOnly() {
+function allowMinOnly() {
   if (minInput.value === "") {
     minInput.value = "";
   };
@@ -103,7 +105,7 @@ function setTimer() {
   var min = parseInt(minInput.value)
   var sec = parseInt(secInput.value)
   var timer = min * 60 + sec;
-  // var timer = timer, minutes, seconds;
+  var timer = timer, minutes, seconds;
     minutes = parseInt(timer / 60, 10);
     seconds = parseInt(timer % 60, 10);
     minutes = minutes < 10 ? "0" + minutes : minutes; 
