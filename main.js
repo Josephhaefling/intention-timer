@@ -115,7 +115,7 @@ function setTimer() {
  };
 
 function startTimer() {
-  setInterval(function() {
+  var countdown = setInterval(function() {
     var timer = parseInt(timeLeft), minutes, seconds;
     if (--timer >= 0) {
       minutes = parseInt(timer / 60, 10);
@@ -125,9 +125,10 @@ function startTimer() {
       countdownTimer.innerText = minutes + ":" + seconds;
       timeLeft = parseInt(timeLeft) - 1;
     } else {
-      startTimerButton.innerHTML = 'You crushed it!'
-    }
+      window.clearInterval(countdown)
+      startTimerButton.innerHTML = 'Completed!';
+      countdownTimer.innerHTML = "You F'n crushed it!";
+      timerStatus.insertAdjacentHTML('afterend', '<button id="log-activity-button">Log Activity</button>'); 
+     }
   }, 1000);
 }
-
-
