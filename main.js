@@ -18,6 +18,9 @@ var countdownTimer = document.querySelector('#time-remaining');
 var timeLeft = 0;
 var display = countdownTimer;
 var activityInputTimerPage = document.querySelector('.input-activity-timer-page');
+var logActivity = document.querySelector('#log-activity-button');
+var rightSection = document.querySelector('.past-activities-card-box');
+var timerFace= document.querySelector('#timer-face');
 
 
 studyBtn.addEventListener('click', studyClicked);
@@ -28,7 +31,7 @@ secInput.addEventListener('input', allowSecOnly);
 startActivityBtn.addEventListener('click', fieldsCompleted)
 startActivityBtn.addEventListener('mouseup', updateTimerColor);
 timerStatus.addEventListener('click', startTimer);
-
+timerFace.addEventListener('click', createActivityCard);
 
 
 function studyClicked() {
@@ -59,7 +62,7 @@ function exerciseClicked() {
   studyImage.src = "assets/study.svg";
   studyBtn.classList.remove ('study-selected');
   buttonSelected = 'exercise';
-}
+} 
 
 function fieldsCompleted() {
   if (buttonSelected === '') {
@@ -77,7 +80,6 @@ function fieldsCompleted() {
     setTimer();
   }
 }
-
 
 function updateTimerColor() {
   if (buttonSelected === 'exercise') {
@@ -131,4 +133,41 @@ function startTimer() {
       timerStatus.insertAdjacentHTML('afterend', '<button id="log-activity-button">Log Activity</button>'); 
      }
   }, 1000);
-}
+};
+// Object and Class
+
+function createActivityCard(e) {
+  if(e.target.matches('#log-activity-button')) {
+  var newActivity = new ActivityCard (buttonSelected, minInput.value, secInput.value, nameCategory.value);
+  newActivity.makePastActivitiesCard();
+  }
+};
+
+
+class ActivityCard {
+  constructor(activity, minutes, seconds, achievedActivity) {
+    this.activity = activity;
+    this.minutes = minutes;
+    this.seconds = seconds;
+    this.achievedActivity = achievedActivity;
+  }
+  makePastActivitiesCard(){
+    rightSection.insertAdjacentHTML('beforeend', 
+    `<div class="new-activity-card">
+      <div>
+        <p class="activity-selected">${this.activity}</p>
+      </div>
+      <div> 
+        <p class="min-selected">${this.minutes} MIN ${this.seconds} SECONDS</p>
+      </div>
+      <div>
+        <span class="activity-input">${this.achievedActivity} </span>
+      </div>
+     </div> 
+    `)
+  }
+};
+
+
+
+

@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
-  <link href = "styles.css" type = "text/css" rel = "stylesheet" />
-  <title>Intention Timer</title>
-</head>
-<body>
-  <header>
-    <h1>Intention Timer</h1>
-  </header>
-  <main>
-    <section class ="left-section">
-      <h2>New Activity</h2>
-      <fieldset class ="select-activity">
-        <h3 class="category-header">Select a category:</h3>
-        <div class = "button-container">
-          <button type="button" name="button" class="activity-button" id = "study-button"><img src="assets/study.svg" id = "study-image">Study</button>
-          <button type="button" name="button" class="activity-button" id = "meditate-button"><img src="assets/meditate.svg" id = "meditate-image">Meditate</button>
-          <button type="button" name="button" class="activity-button" id = "exercise-button"><img src="assets/exercise.svg" id = "exercise-image">Exercise</button>
-          <span id="category-button-error" class="no-error-category-selected"><img src="assets/warning.svg"/>Select a category</span>
-        </div>
-        <h3 class="category-header">What would you like to accomplish during this time?</h3>
-          <input class="enter-in-name-category"type="text" name="required" minlength= "5" value="" ></input>
-          <span id = "no-error-message"><img src = "assets/warning.svg" />A discription is required.</span>
-      <div class = "num-input-container">
-        <div class="time-containers">
-          <h3 class="category-header time-header">Minutes</h3>
-          <input class="min-input" type="number" name="Minutes" value="">
-          <span id="min-input-error" class="no-error-category-selected"><img src="assets/warning.svg"/>Enter yo' minutes!</span>
-        </div>
-        <div class = "time-containers">
-          <h3 class="time-header">Seconds</h3>
-          <input type="number" class="sec-input" name="Seconds" value="">
-          <span id="sec-input-error" class="no-error-category-selected"><img src="assets/warning.svg"/>Enter yo' seconds!</span>
-        </div>
-      </div>
-      <div id = "activity-button-container">
-
-          <button type="button" name="button" class="start-activity-button">START ACTIVITY</button>
-      </div>
-      </fieldset>
-    </section>
-    <section id="timer-page" class="timer-section main-page-hide">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+    <link href = "styles.css" type = "text/css" rel = "stylesheet" />
+    <title>Intention Timer</title>
+  </head>
+  <body>
+    <header>
+      <h1>Intention Timer</h1>
+    </header>
+    <main>
+      <section class ="left-section">
+        <h2>New Activity</h2>
+        <fieldset class ="select-activity">
+          <h3 class="category-header">Select a category:</h3>
+          <div class = "button-container">
+            <button type="button" name="button" class="activity-button" id = "study-button"><img src="assets/study.svg" id = "study-image">Study</button>
+            <button type="button" name="button" class="activity-button" id = "meditate-button"><img src="assets/meditate.svg" id = "meditate-image">Meditate</button>
+            <button type="button" name="button" class="activity-button" id = "exercise-button"><img src="assets/exercise.svg" id = "exercise-image">Exercise</button>
+            <span id="category-button-error" class="no-error-category-selected"><img src="assets/warning.svg"/>Select a category</span>
+          </div>
+          <h3 class="category-header">What would you like to accomplish during this time?</h3>
+            <input class="enter-in-name-category"type="text" name="required" minlength= "5" value="" ></input>
+            <span id = "no-error-message"><img src = "assets/warning.svg" />A discription is required.</span>
+          <div class = "num-input-container">
+            <div class="time-containers">
+              <h3 class="category-header time-header">Minutes</h3>
+              <input class="min-input" type="number" name="Minutes" value="">
+              <span id="min-input-error" class="no-error-category-selected"><img src="assets/warning.svg"/>Enter yo' minutes!</span>
+            </div>
+            <div class="time-containers">
+              <h3 class="time-header">Seconds</h3>
+              <input type="number" class="sec-input" name="Seconds" value="">
+              <span id="sec-input-error" class="no-error-category-selected"><img src="assets/warning.svg"/>Enter yo' seconds!</span>
+            </div>
+          </div>
+          <div id="activity-button-container">
+            <button type="button" name="button" class="start-activity-button">START ACTIVITY</button>
+          </div>
+        </fieldset>
+      </section>
+      <section id="timer-page" class="timer-section main-page-hide">
         <h2>Current Activity</h2>
         <div id="timer-face">
           <p class="input-activity-timer-page"><p>
           <p id="time-remaining"></p>
           <button id="timer-status"><span id="timer-text">START</span></button>
         </div>
-    </section>
-    <section class= "right-section">
-      <h2>Past Activities</h2>
-      <section class= "past-activities-card-box">
       </section>
-    </section>
-  </section>
-  </main>
-  <script src="main.js"></script>
-</body>
+      <section class="right-section">
+        <h2>Past Activities</h2>
+        <section class="past-activities-card-box"></section>
+      </section>
+    </main>
+      <script src="main.js"></script>
+  </body>
 </html>
