@@ -9,7 +9,7 @@ var secInput = document.querySelector('.sec-input');
 var nameCategory = document.querySelector('.enter-in-name-category');
 var errorMessage = document.querySelector('#error-message');
 var startActivityBtn = document.querySelector('.start-activity-button');
-var buttonSelected = '';
+var buttonContainer = document.querySelector('.button-container');
 var leftSection = document.querySelector('.left-section');
 var timerSection = document.querySelector('#timer-page');
 var timerStatus = document.querySelector('#timer-status');
@@ -23,9 +23,9 @@ var rightSection = document.querySelector('.past-activities-card-box');
 var timerFace= document.querySelector('#timer-face');
 
 
-studyBtn.addEventListener('click', studyClicked);
-meditateBtn.addEventListener('click', meditateClicked);
-exerciseBtn.addEventListener('click', exerciseClicked);
+// studyBtn.addEventListener('click', buttonClicked);
+// meditateBtn.addEventListener('click', buttonClicked);
+buttonContainer.addEventListener('click', buttonClicked);
 minInput.addEventListener('input', allowMinOnly);
 secInput.addEventListener('input', allowSecOnly);
 startActivityBtn.addEventListener('click', fieldsCompleted)
@@ -34,35 +34,60 @@ timerStatus.addEventListener('click', startTimer);
 timerFace.addEventListener('click', createActivityCard);
 
 
-function studyClicked() {
-  studyImage.src = "assets/study-active.svg";
-  studyBtn.classList.add('study-selected');
-  meditateImage.src = "assets/meditate.svg";
-  meditateBtn.classList.remove('meditate-selected');
-  exerciseImage.src = "assets/exercise.svg";
-  exerciseBtn.classList.remove('exercise-selected');
-  buttonSelected = 'study';
-}
+// function studyClicked(event) {
+//   studyImage.src = "assets/study-active.svg";
+//     studyBtn.classList.add('study-selected');
+//   meditateImage.src = "assets/meditate.svg";
+//   meditateBtn.classList.remove('meditate-selected');
+//   exerciseImage.src = "assets/exercise.svg";
+//   exerciseBtn.classList.remove('exercise-selected');
+//   console.log(event.target.id)
+// }
+// function meditateClicked() {
+//   meditateImage.src = "assets/meditate-active.svg";
+//   meditateBtn.classList.add("meditate-selected");
+//   studyImage.src = "assets/study.svg";
+//   studyBtn.classList.remove('study-selected');
+//   exerciseImage.src = "assets/exercise.svg";
+//   exerciseBtn.classList.remove('exercise-selected');
+//   buttonSelected = 'meditate';
+// }
 
-function meditateClicked() {
-  meditateImage.src = "assets/meditate-active.svg";
-  meditateBtn.classList.add("meditate-selected");
-  studyImage.src = "assets/study.svg";
-  studyBtn.classList.remove('study-selected');
-  exerciseImage.src = "assets/exercise.svg";
-  exerciseBtn.classList.remove('exercise-selected');
-  buttonSelected = 'meditate';
-}
+// function exerciseClicked() {
+//   exerciseImage.src = "assets/exercise-active.svg";
+//   exerciseBtn.classList.add('exercise-selected');
+//   meditateImage.src = "assets/meditate.svg";
+//   meditateBtn.classList.remove ('meditate-selected');
+//   studyImage.src = "assets/study.svg";
+//   studyBtn.classList.remove ('study-selected');
+//   buttonSelected = 'exercise';
+// } 
 
-function exerciseClicked() {
-  exerciseImage.src = "assets/exercise-active.svg";
-  exerciseBtn.classList.add('exercise-selected');
-  meditateImage.src = "assets/meditate.svg";
-  meditateBtn.classList.remove ('meditate-selected');
-  studyImage.src = "assets/study.svg";
-  studyBtn.classList.remove ('study-selected');
-  buttonSelected = 'exercise';
-} 
+function buttonClicked(event) {
+  if(event.target.id === 'study-button') {
+    studyImage.src = "assets/study-active.svg";
+    studyBtn.classList.add('study-selected');
+    meditateImage.src = "assets/meditate.svg";
+    meditateImage.src = "assets/meditate.svg";
+    meditateBtn.classList.remove('meditate-selected');
+    exerciseImage.src = "assets/exercise.svg";
+    exerciseBtn.classList.remove('exercise-selected');
+  } else if (event.target.id === 'meditate-button') {
+    meditateImage.src = "assets/meditate-active.svg";
+    meditateBtn.classList.add("meditate-selected");
+    studyImage.src = "assets/study.svg";
+    studyBtn.classList.remove('study-selected');
+    exerciseImage.src = "assets/exercise.svg";
+    exerciseBtn.classList.remove('exercise-selected');
+  } else {
+    exerciseImage.src = "assets/exercise-active.svg";
+    exerciseBtn.classList.add('exercise-selected');
+    meditateImage.src = "assets/meditate.svg";
+    meditateBtn.classList.remove ('meditate-selected');
+    studyImage.src = "assets/study.svg";
+    studyBtn.classList.remove ('study-selected');
+  }
+}
 
 function fieldsCompleted() {
   if (buttonSelected === '') {
