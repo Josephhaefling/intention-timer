@@ -4,6 +4,7 @@ var meditateBtn = document.querySelector('#meditate-button');
 var meditateImage = document.querySelector('#meditate-image');
 var exerciseBtn = document.querySelector('#exercise-button');
 var exerciseImage = document.querySelector('#exercise-image');
+var numContainer = document.querySelector('.num-input-container')
 var minInput = document.querySelector('.min-input');
 var secInput = document.querySelector('.sec-input');
 var nameCategory = document.querySelector('.enter-in-name-category');
@@ -26,8 +27,11 @@ var timerFace= document.querySelector('#timer-face');
 // studyBtn.addEventListener('click', buttonClicked);
 // meditateBtn.addEventListener('click', buttonClicked);
 buttonContainer.addEventListener('click', buttonClicked);
-minInput.addEventListener('input', allowMinOnly);
-secInput.addEventListener('input', allowSecOnly);
+
+// minInput.addEventListener('input', allowMinOnly);
+// secInput.addEventListener('input', allowSecOnly);
+numContainer.addEventListener('click', minSecBtnclicked)
+
 startActivityBtn.addEventListener('click', fieldsCompleted)
 startActivityBtn.addEventListener('mouseup', updateTimerColor);
 timerStatus.addEventListener('click', startTimer);
@@ -89,14 +93,15 @@ function buttonClicked(event) {
   }
 }
 
-function fieldsCompleted() {
-  if (buttonSelected === '') {
+// Need to get num/sec working so that the correct error message appears
+function fieldsCompleted(event) {
+  if(event.target.id === 'study-button' || 'meditate-button' || 'excercise-button') {
     document.querySelector('#category-button-error').id="error-message";
-  } else if (nameCategory.value === '' ) {
+  } else if (event.target.nameCategory.value === '' ) {
     document.querySelector('#no-error-message').id = "error-message";
-  } else if (minInput.value === '' ) {
+  } else if (event.target.minInput.value === '' ) {
     document.querySelector('#min-input-error').id = "error-message";
-  } else if (secInput.value === '') {
+  } else if (event.target.secInput.value === '') {
     document.querySelector('#sec-input-error').id = "error-message";
   } else {
     leftSection.classList.add('main-page-hide');
@@ -105,28 +110,39 @@ function fieldsCompleted() {
     setTimer();
   }
 }
-
-function updateTimerColor() {
-  if (buttonSelected === 'exercise') {
+// buttonSelected was eliminated in refactor - 
+// haven't figured out how to refactor......
+function updateTimerColor(e) {
+  if(e.target.id === 'exercise-button') {
     timerStatus.style.border = "2px solid #FD8078";
-  } else if (buttonSelected === 'study') {
+    console.log()
+  } else if (e.target.id === 'study-button') {
     timerStatus.style.border = "2px solid #B3FD78";
   } else {
     timerStatus.style.border = "2px solid #C278FD";
   }
 }
 
-function allowMinOnly() {
-  if (minInput.value === "") {
-    minInput.value = "";
+// Attempting to refactor min/sec input for nums only
+function minSecBtnclicked(e) {
+  if(e.target.matches('.min-input' || '.sec-input')) {
+    (minInput.value === "") 
+      minInput.value = "";
   };
-};
+}
 
-function allowSecOnly() {
-  if (secInput.value === "") {
-    secInput.value = "";
-  };
-};
+
+// function allowMinOnly() {
+//   if (minInput.value === "") {
+//     minInput.value = "";
+//   };
+// };
+
+// function allowSecOnly() {
+//   if (secInput.value === "") {
+//     secInput.value = "";
+//   };
+// };
 
 function setTimer() {
   var min = parseInt(minInput.value)

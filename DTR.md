@@ -13,8 +13,7 @@ Bean: JavaScript and Flexbox
 
 #### What do we want to achieve as a team? How will we know that we're successful?):
 
-We would like to get 3's on our project, we want to 100% understand what JS is doing and be able to communicate
-everything.  
+We would like to get 3's on our project, we want to 100% understand what JS is doing and be able to communicate everything.  
 
 #### Team strengths & collaboration styles (consider discussing your Pairin qualities here):
 
